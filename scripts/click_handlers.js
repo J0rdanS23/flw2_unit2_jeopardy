@@ -41,6 +41,8 @@ function attachClickHandlers() {
     let moneyValue = $(questionElement).text().replace("$", "");
     $(questionElement).click(() => {
       // Add code here
+      console.log("quesitonElement click function");
+      questionOnClick(categoryIndex, moneyValue);
     });
   });
 }
@@ -53,6 +55,8 @@ function attachClickHandlers() {
 *      Need more help? Ask a volunteer.
 */
 function questionOnClick(categoryIndex, moneyValue) {
+  console.log(categoryIndex, moneyValue);
+
   let question = getQuestion(categoryIndex, moneyValue);
   $("#question-modal-title").html(
     categories[categoryIndex] + " - $" + moneyValue
@@ -61,13 +65,16 @@ function questionOnClick(categoryIndex, moneyValue) {
   $("#question-modal-show-answer")
     .click(() => {
       // Add code here
-      console.log("I just got clicked, I wish I could do more though!");
+      console.log("in question modal show answer");
+      answerOnClick(categoryIndex, moneyValue);
     })
     .show();
 
   $("#question-modal-close").click(() => {
     // Add code here
-    console.log("I just got clicked, I wish I could do more though!");
+    console.log("in question modal close");
+    hideQuestionPopup();
+    //console.log("in question modal close");
   });
   $("#question-modal").modal("show");
 }
