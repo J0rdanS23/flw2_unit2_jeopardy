@@ -14,7 +14,6 @@
  *      HINT: Use the `hide()` and `show()` methods in jQUery;
  *      Need more help? Check out https://api.jquery.com/ or ask a volunteer.
  */
-
 function renderScoringButtons() {
     // Add code here
     $('#score').show();
@@ -54,10 +53,12 @@ function subtractFromScore() {
     // Add code here
     var currentScore = getCurrentScore();
     var newScore = currentScore - currentQuestionValue;
+    $("#current-score").text(newScore);
 }
 
 function addToScore() {
     // Add code here
     var currentScore = getCurrentScore();
     var newScore = currentScore + currentQuestionValue;
+    $("#current-score").text(newScore);
 }
